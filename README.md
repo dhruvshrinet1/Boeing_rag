@@ -1,2 +1,2 @@
 # Boeing_rag
-conda activate "/Users/dhruvshrinet/Desktop/Assignment /env
+conda activate "/Users/dhruvshrinet/Desktop/Assignment /env"

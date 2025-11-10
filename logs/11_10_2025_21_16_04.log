@@ -1,0 +1,2 @@
+{"session_id": "60216a76", "session_path": "test session/60216a76", "timestamp": "2025-11-10T21:16:04.547629Z", "level": "info", "event": "DocHandler initialized"}
+{"file": "Boeing B737 Manual-1.pdf", "save_path": "test session/60216a76/Boeing B737 Manual-1.pdf", "session_id": "60216a76", "timestamp": "2025-11-10T21:16:04.550293Z", "level": "info", "event": "PDF saved successfully"}
