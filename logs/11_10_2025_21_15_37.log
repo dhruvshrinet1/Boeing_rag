@@ -1,2 +1,0 @@
-{"session_id": "d6648884", "session_path": "test session/d6648884", "timestamp": "2025-11-10T21:15:37.538054Z", "level": "info", "event": "DocHandler initialized"}
-{"error": "'DummyFile' object has no attribute '_file_path'", "session_id": "d6648884", "timestamp": "2025-11-10T21:15:37.538180Z", "level": "error", "event": "Failed to save PDF"}

@@ -1,6 +1,0 @@
-{"timestamp": "2025-11-10T20:25:28.978819Z", "level": "info", "event": "Running in LOCAL mode: .env loaded"}
-{"timestamp": "2025-11-10T20:25:28.978918Z", "level": "info", "event": "Loaded GOOGLE_API_KEY from individual env var"}
-{"keys": {"GOOGLE_API_KEY": "AIzaSy..."}, "timestamp": "2025-11-10T20:25:28.978955Z", "level": "info", "event": "API keys loaded"}
-{"config_keys": ["faiss_db", "embedding_model", "retriever", "llm"], "timestamp": "2025-11-10T20:25:28.979518Z", "level": "info", "event": "YAML config loaded"}
-{"model": "models/text-embedding-004", "timestamp": "2025-11-10T20:25:28.979568Z", "level": "info", "event": "Loading embedding model"}
-{"provider": "google", "model": "gemini-2.0-flash", "timestamp": "2025-11-10T20:25:29.560864Z", "level": "info", "event": "Loading LLM"}

@@ -1,2 +1,0 @@
-{"session_id": "2d8cfb1e", "session_path": "test session/2d8cfb1e", "timestamp": "2025-11-10T21:16:52.494106Z", "level": "info", "event": "DocHandler initialized"}
-{"file": "Boeing B737 Manual-1.pdf", "save_path": "test session/2d8cfb1e/Boeing B737 Manual-1.pdf", "session_id": "2d8cfb1e", "timestamp": "2025-11-10T21:16:52.498345Z", "level": "info", "event": "PDF saved successfully"}

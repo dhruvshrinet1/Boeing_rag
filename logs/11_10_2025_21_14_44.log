@@ -1,2 +1,0 @@
-{"session_id": "33209db7", "session_path": "test session/33209db7", "timestamp": "2025-11-10T21:14:44.345910Z", "level": "info", "event": "DocHandler initialized"}
-{"error": "'DummyFile' object has no attribute 'getbuffer'", "session_id": "33209db7", "timestamp": "2025-11-10T21:14:44.346045Z", "level": "error", "event": "Failed to save PDF"}
