@@ -162,7 +162,7 @@ Tuned to reduce over-citation of pages. With fewer documents in the final contex
 
 **Solution**:
 - Added retry logic with slightly rephrased prompts
-- Lowered temperature to 0.4 for more conservative responses
+- Set temperature to 0.2 for more consistent responses
 - Added context in system prompt that this is for "educational/training purposes"
 - Still happens occasionally - might need to switch models for those edge cases
 

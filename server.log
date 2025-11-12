@@ -110,3 +110,4 @@ INFO:     127.0.0.1:57765 - "POST /query HTTP/1.1" 200 OK
 {"docs": 10, "timestamp": "2025-11-12T18:43:31.160944Z", "level": "info", "event": "Reranking done"}
 {"pages": 2, "timestamp": "2025-11-12T18:43:43.099774Z", "level": "info", "event": "Query done"}
 INFO:     127.0.0.1:57799 - "POST /query HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65505 - "GET /health HTTP/1.1" 200 OK

@@ -60,7 +60,7 @@ def calculate_retrieval_metrics(expected_pages: Set[int], retrieved_pages: List[
 
 def run_evaluation(
     excel_path: str = "data/document_analysis/Coding Challenge Evals.xlsx",
-    api_url: str = "http://localhost:8080/query",
+    api_url: str = "http://localhost:8000/query",
     output_path: str = "evaluation_results.xlsx"
 ):
     print("=" * 70)
