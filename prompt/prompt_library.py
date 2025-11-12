@@ -1,26 +1,5 @@
 
-from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
-
-# Prompt for document analysis
-document_analysis_prompt = ChatPromptTemplate.from_template("""
-You are a highly capable assistant trained to analyze and summarize documents.
-Return ONLY valid JSON matching the exact schema below.
-
-{format_instructions}
-
-Analyze this document:
-{document_text}
-""")
-
-# Prompt for contextualizing questions based on chat history
-contextualize_q_prompt = ChatPromptTemplate.from_messages([
-    ("system", """Given a chat history and the latest user question \
-which might reference context in the chat history, formulate a standalone question \
-which can be understood without the chat history. Do NOT answer the question, \
-just reformulate it if needed and otherwise return it as is."""),
-    MessagesPlaceholder("chat_history"),
-    ("human", "{input}"),
-])
+from langchain_core.prompts import ChatPromptTemplate
 
 # Prompt for answering questions based on retrieved context
 qa_prompt = ChatPromptTemplate.from_messages([
@@ -61,8 +40,6 @@ Focus on technical details, numbers, labels, and any text visible in the image.
 Be concise and specific. If it's a diagram, describe what it shows."""
 
 PROMPT_REGISTRY = {
-    "document_analysis": document_analysis_prompt,
-    "contextualize_question": contextualize_q_prompt,
     "context_qa": qa_prompt,
     "query_expansion": query_expansion_prompt,
     "image_description": image_description_prompt,

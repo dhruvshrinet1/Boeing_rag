@@ -28,8 +28,8 @@ async def lifespan(app: FastAPI):
         # load config from env
         pdf_path = os.getenv("BOEING_MANUAL_PATH", "data/document_analysis/Boeing B737 Manual-1.pdf")
         index_dir = os.getenv("FAISS_INDEX_DIR", "faiss_index")
-        top_k = int(os.getenv("TOP_K", "15"))
-        rerank_top_k = int(os.getenv("RERANK_TOP_K", "10"))
+        top_k = int(os.getenv("TOP_K", "20"))
+        rerank_top_k = int(os.getenv("RERANK_TOP_K", "15"))
         process_images = os.getenv("PROCESS_IMAGES", "false").lower() == "true"
 
         # setup vector store

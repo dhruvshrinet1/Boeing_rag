@@ -17,11 +17,7 @@ build/
 logs/
 *.log
 
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
+
 
 # OS
 .DS_Store
@@ -30,5 +26,3 @@ Thumbs.db
 # Project specific
 faiss_index/
 evaluation_results.xlsx
-~$*.xlsx
-server.log

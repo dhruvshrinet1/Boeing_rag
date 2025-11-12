@@ -87,8 +87,8 @@ Server starts at `http://localhost:8000`
 Edit `.env` for:
 - `GOOGLE_API_KEY` - Required
 - `PROCESS_IMAGES` - Enable multimodal image processing (default: false)
-- `TOP_K` - Retrieval count (default: 15)
-- `RERANK_TOP_K` - Final docs after reranking (default: 10)
+- `TOP_K` - Retrieval count (default: 20)
+- `RERANK_TOP_K` - Final docs after reranking (default: 15)
 
 Edit `config/config.yaml` to change models or parameters.
 
