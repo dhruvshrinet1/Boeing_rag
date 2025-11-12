@@ -15,7 +15,7 @@ from prompt.prompt_library import PROMPT_REGISTRY
 
 
 class PDFProcessor:
-    def __init__(self, chunk_size: int = 1000, chunk_overlap: int = 200, process_images: bool = True):
+    def __init__(self, chunk_size: int = 1000, chunk_overlap: int = 200, process_images: bool = False):
         self.chunk_size = chunk_size
         self.chunk_overlap = chunk_overlap
         self.process_images = process_images

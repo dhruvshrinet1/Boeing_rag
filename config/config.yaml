@@ -7,12 +7,12 @@ embedding_model:
   model_name: "models/text-embedding-004"
 
 retriever:
-  top_k: 10
+  top_k: 15
 
 llm:
   google:
     provider: "google"
     model_name: "models/gemini-2.5-pro-preview-03-25"
-    temperature: 0.4
+    temperature: 0.2
     max_output_tokens: 2048
     
