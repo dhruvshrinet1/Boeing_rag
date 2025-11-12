@@ -122,8 +122,9 @@ class HybridBoeingRAGService:
             reranked = [(docs[i], float(rerank_scores[i])) for i in range(len(docs))]
             reranked.sort(key=lambda x: x[1], reverse=True)
 
-            log.info("Reranking done", docs=len(reranked))
-            return reranked[:self.rerank_top_k]
+            final_docs = reranked[:self.rerank_top_k]
+            log.info("Reranking done", docs=len(final_docs))
+            return final_docs
         except Exception as e:
             log.error("Reranking failed", error=str(e))
             return docs_with_scores
@@ -172,8 +173,6 @@ class HybridBoeingRAGService:
                 docs = [doc for doc, _ in reranked_docs]
 
                 return {
-                    "documents": docs,
-                    "docs_with_scores": reranked_docs,
                     "context": self._format_docs(docs),
                     "input": question
                 }
@@ -188,8 +187,7 @@ class HybridBoeingRAGService:
                         | StrOutputParser()
                     ).invoke({
                         "context": x["context"],
-                        "input": x["input"],
-                        "chat_history": []
+                        "input": x["input"]
                     })
                 )
             )

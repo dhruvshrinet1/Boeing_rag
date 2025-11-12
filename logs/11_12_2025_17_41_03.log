@@ -1,0 +1,47 @@
+{"timestamp": "2025-11-12T17:41:07.676698Z", "level": "info", "event": "Starting RAG service..."}
+{"timestamp": "2025-11-12T17:41:07.677032Z", "level": "info", "event": "Running in LOCAL mode: .env loaded"}
+{"timestamp": "2025-11-12T17:41:07.677071Z", "level": "info", "event": "Loaded GOOGLE_API_KEY from individual env var"}
+{"keys": {"GOOGLE_API_KEY": "AIzaSy..."}, "timestamp": "2025-11-12T17:41:07.677103Z", "level": "info", "event": "API keys loaded"}
+{"config_keys": ["faiss_db", "embedding_model", "retriever", "llm"], "timestamp": "2025-11-12T17:41:07.677838Z", "level": "info", "event": "YAML config loaded"}
+{"model": "models/text-embedding-004", "timestamp": "2025-11-12T17:41:07.677874Z", "level": "info", "event": "Loading embedding model"}
+{"index_dir": "faiss_index", "timestamp": "2025-11-12T17:41:07.709627Z", "level": "info", "event": "VectorStoreManager initialized"}
+{"timestamp": "2025-11-12T17:41:07.709779Z", "level": "info", "event": "No existing vector store"}
+{"pdf": "data/document_analysis/Boeing B737 Manual-1.pdf", "timestamp": "2025-11-12T17:41:07.709937Z", "level": "info", "event": "Creating new vector store"}
+{"chunk_size": 1000, "process_images": false, "timestamp": "2025-11-12T17:41:07.709998Z", "level": "info", "event": "PDFProcessor initialized"}
+{"path": "data/document_analysis/Boeing B737 Manual-1.pdf", "timestamp": "2025-11-12T17:41:07.710031Z", "level": "info", "event": "Processing PDF"}
+{"total_pages": 146, "with_images": false, "timestamp": "2025-11-12T17:41:07.722839Z", "level": "info", "event": "Processing PDF"}
+{"pages": 146, "timestamp": "2025-11-12T17:41:26.948538Z", "level": "info", "event": "PDF extracted"}
+{"chunks": 522, "timestamp": "2025-11-12T17:41:26.959493Z", "level": "info", "event": "Chunking done"}
+{"docs": 522, "timestamp": "2025-11-12T17:41:26.959679Z", "level": "info", "event": "Creating vector store"}
+Loading faiss.
+Successfully loaded faiss.
+Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes. This is only an error if you're trying to use GPU Faiss.
+{"timestamp": "2025-11-12T17:41:40.683737Z", "level": "info", "event": "Vector store saved"}
+{"timestamp": "2025-11-12T17:41:40.685114Z", "level": "info", "event": "Running in LOCAL mode: .env loaded"}
+{"timestamp": "2025-11-12T17:41:40.685180Z", "level": "info", "event": "Loaded GOOGLE_API_KEY from individual env var"}
+{"keys": {"GOOGLE_API_KEY": "AIzaSy..."}, "timestamp": "2025-11-12T17:41:40.685222Z", "level": "info", "event": "API keys loaded"}
+{"config_keys": ["faiss_db", "embedding_model", "retriever", "llm"], "timestamp": "2025-11-12T17:41:40.686122Z", "level": "info", "event": "YAML config loaded"}
+{"provider": "google", "model": "models/gemini-2.5-pro-preview-03-25", "timestamp": "2025-11-12T17:41:40.686171Z", "level": "info", "event": "Loading LLM"}
+{"timestamp": "2025-11-12T17:41:40.693104Z", "level": "info", "event": "Running in LOCAL mode: .env loaded"}
+{"timestamp": "2025-11-12T17:41:40.693193Z", "level": "info", "event": "Loaded GOOGLE_API_KEY from individual env var"}
+{"keys": {"GOOGLE_API_KEY": "AIzaSy..."}, "timestamp": "2025-11-12T17:41:40.693220Z", "level": "info", "event": "API keys loaded"}
+{"config_keys": ["faiss_db", "embedding_model", "retriever", "llm"], "timestamp": "2025-11-12T17:41:40.693935Z", "level": "info", "event": "YAML config loaded"}
+{"provider": "google", "model": "models/gemini-2.5-pro-preview-03-25", "timestamp": "2025-11-12T17:41:40.693996Z", "level": "info", "event": "Loading LLM"}
+{"timestamp": "2025-11-12T17:41:40.695022Z", "level": "info", "event": "QueryExpander initialized"}
+{"num_documents": 522, "timestamp": "2025-11-12T17:41:40.708150Z", "level": "info", "event": "BM25 index built"}
+Use pytorch device: mps
+{"timestamp": "2025-11-12T17:41:43.040146Z", "level": "info", "event": "Reranker loaded"}
+{"timestamp": "2025-11-12T17:41:43.044613Z", "level": "info", "event": "RAG chain built"}
+{"top_k": 20, "rerank_top_k": 15, "timestamp": "2025-11-12T17:41:43.044903Z", "level": "info", "event": "HybridBoeingRAGService initialized"}
+{"timestamp": "2025-11-12T17:41:43.045071Z", "level": "info", "event": "Service started"}
+{"q": "I'm calculating our takeoff weight for a dry runway. We're at 2,000 feet pressure altitude, and the ", "timestamp": "2025-11-12T17:42:07.697284Z", "level": "info", "event": "Processing query"}
+{"num_expansions": 3, "timestamp": "2025-11-12T17:42:26.191499Z", "level": "info", "event": "Query expanded"}
+{"dense": 20, "bm25": 20, "timestamp": "2025-11-12T17:42:26.620423Z", "level": "info", "event": "Hybrid retrieval done"}
+{"docs": 15, "timestamp": "2025-11-12T17:42:27.291359Z", "level": "info", "event": "Reranking done"}
+{"pages": 0, "timestamp": "2025-11-12T17:42:48.281526Z", "level": "info", "event": "Query done"}
+{"q": "We're doing a Flaps 15 takeoff. Remind me, what is the first flap selection we make during retractio", "timestamp": "2025-11-12T17:42:48.826804Z", "level": "info", "event": "Processing query"}
+{"num_expansions": 3, "timestamp": "2025-11-12T17:43:05.309206Z", "level": "info", "event": "Query expanded"}
+{"dense": 20, "bm25": 20, "timestamp": "2025-11-12T17:43:05.651528Z", "level": "info", "event": "Hybrid retrieval done"}
+{"docs": 15, "timestamp": "2025-11-12T17:43:06.082069Z", "level": "info", "event": "Reranking done"}
+{"pages": 1, "timestamp": "2025-11-12T17:43:20.063201Z", "level": "info", "event": "Query done"}
+{"q": "We're planning a Flaps 40 landing on a wet runway at a 1,000-foot pressure altitude airport. If the ", "timestamp": "2025-11-12T17:43:20.581516Z", "level": "info", "event": "Processing query"}

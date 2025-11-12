@@ -109,10 +109,16 @@ class PDFProcessor:
                         tables = page.find_tables()
                         if tables:
                             table_text = "\n\n=== TABLES ===\n"
-                            for table in tables:
+                            for idx, table in enumerate(tables):
+                                table_text += f"Table {idx + 1}:\n"
                                 table_data = table.extract()
-                                for row in table_data:
-                                    table_text += " | ".join(str(cell) if cell else "" for cell in row) + "\n"
+                                for row_idx, row in enumerate(table_data):
+                                    row_text = " | ".join(str(cell) if cell else "" for cell in row)
+                                    if row_idx == 0:
+                                        table_text += f"HEADER: {row_text}\n"
+                                    else:
+                                        table_text += f"Row {row_idx}: {row_text}\n"
+                                table_text += "\n"
                             text += table_text
                     except Exception as e:
                         log.debug("Table extraction skipped", page=page_num + 1)

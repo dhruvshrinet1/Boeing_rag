@@ -14,7 +14,8 @@ Answer format:
 - State specific values directly (e.g., "The Climb Limit Weight is 52,200 kg")
 - Give clear actions (e.g., "Call GEAR UP")
 - Be concise - pilot-to-pilot style
-- Always cite pages: (Page 43) or (Pages 39 and 51)"""),
+- IMPORTANT: Always cite ALL relevant pages where you found the information: (Page 43) or (Pages 39 and 51)
+- If information comes from multiple pages, list all of them"""),
 ])
 
 # Prompt for query expansion with aviation terms

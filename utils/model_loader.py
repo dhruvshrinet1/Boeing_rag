@@ -60,7 +60,7 @@ class ModelLoader:
             model_name = self.config["embedding_model"]["model_name"]
             log.info("Loading embedding model", model=model_name)
             return GoogleGenerativeAIEmbeddings(model=model_name,
-                                                google_api_key=self.api_key_mgr.get("GOOGLE_API_KEY")) #type: ignore
+                                                google_api_key=self.api_key_mgr.get("GOOGLE_API_KEY")) 
         except Exception as e:
             log.error("Error loading embedding model", error=str(e))
             raise DocumentPortalException("Failed to load embedding model", sys)
@@ -99,6 +99,7 @@ class ModelLoader:
 
 
 if __name__ == "__main__":
+
     loader = ModelLoader()
 
     # Test Embedding
@@ -111,4 +112,4 @@ if __name__ == "__main__":
     llm = loader.load_llm()
     print(f"LLM Loaded: {llm}")
     result = llm.invoke("Hello, how are you?")
-    print(f"LLM Result: {result.content}")
+    print(f"LLM Result: {result.content}")    

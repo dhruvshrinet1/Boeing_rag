@@ -1,0 +1,10 @@
+{"error": "cannot import name 'Undefined' from 'pydantic.fields' (/opt/anaconda3/lib/python3.12/site-packages/pydantic/fields.py)", "timestamp": "2025-11-12T16:49:25.088526Z", "level": "error", "event": "Failed to start"}
+============================================================
+Boeing 737 Manual RAG Service
+============================================================
+Server: http://0.0.0.0:8000
+Docs: http://0.0.0.0:8000/docs
+============================================================
+
+
+Error: cannot import name 'Undefined' from 'pydantic.fields' (/opt/anaconda3/lib/python3.12/site-packages/pydantic/fields.py)
