@@ -83,9 +83,15 @@ Return ONLY the expanded queries, one per line, without numbering or explanation
 Keep each expansion concise (max 20 words).
 """)
 
+# Prompt for describing images from technical manual
+image_description_prompt = """Describe this image from a Boeing 737 technical manual.
+Focus on technical details, numbers, labels, and any text visible in the image.
+Be concise and specific. If it's a diagram, describe what it shows."""
+
 PROMPT_REGISTRY = {
     "document_analysis": document_analysis_prompt,
     "contextualize_question": contextualize_q_prompt,
     "context_qa": qa_prompt,
     "query_expansion": query_expansion_prompt,
+    "image_description": image_description_prompt,
 }

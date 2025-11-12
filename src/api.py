@@ -5,7 +5,6 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
 
 from model.models import QuestionRequest, RAGResponse
 from src.document_processor import VectorStoreManager
@@ -20,19 +19,24 @@ vectorstore_manager: Optional[VectorStoreManager] = None
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    """Initialize RAG service on startup"""
     global rag_service, vectorstore_manager
 
     try:
         log.info("Starting RAG service...")
 
+        # load config from env
         pdf_path = os.getenv("BOEING_MANUAL_PATH", "data/document_analysis/Boeing B737 Manual-1.pdf")
         index_dir = os.getenv("FAISS_INDEX_DIR", "faiss_index")
         top_k = int(os.getenv("TOP_K", "15"))
         rerank_top_k = int(os.getenv("RERANK_TOP_K", "10"))
+        process_images = os.getenv("PROCESS_IMAGES", "false").lower() == "true"
 
-        vectorstore_manager = VectorStoreManager(index_dir=index_dir)
+        # setup vector store
+        vectorstore_manager = VectorStoreManager(index_dir=index_dir, process_images=process_images)
         vectorstore = vectorstore_manager.get_or_create_vector_store(pdf_path)
 
+        # initialize RAG service
         rag_service = HybridBoeingRAGService(
             vectorstore=vectorstore,
             top_k=top_k,
@@ -55,6 +59,7 @@ app = FastAPI(
     lifespan=lifespan
 )
 
+# enable CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -66,6 +71,7 @@ app.add_middleware(
 
 @app.get("/")
 async def root():
+    """API info"""
     return {
         "service": "Boeing 737 Manual RAG API",
         "version": "1.0.0",
@@ -75,6 +81,7 @@ async def root():
 
 @app.get("/health")
 async def health_check():
+    """Check if service is ready"""
     if rag_service is None:
         raise HTTPException(
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
@@ -85,6 +92,7 @@ async def health_check():
 
 @app.post("/query", response_model=RAGResponse)
 async def query_manual(request: QuestionRequest) -> RAGResponse:
+    """Main query endpoint"""
     try:
         if rag_service is None:
             raise HTTPException(
@@ -107,59 +115,9 @@ async def query_manual(request: QuestionRequest) -> RAGResponse:
 
     except HTTPException:
         raise
-    except DocumentPortalException as e:
+    except Exception as e:
         log.error("Query failed", error=str(e))
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Query failed: {str(e)}"
+            detail=str(e)
         )
-    except Exception as e:
-        log.error("Unexpected error", error=str(e))
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Error: {str(e)}"
-        )
-
-
-@app.get("/retrieval-info")
-async def get_retrieval_info(question: str):
-    try:
-        if rag_service is None:
-            raise HTTPException(
-                status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
-                detail="Service not initialized"
-            )
-
-        if not question.strip():
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail="Question cannot be empty"
-            )
-
-        return rag_service.get_retrieval_score_info(question)
-
-    except HTTPException:
-        raise
-    except Exception as e:
-        log.error("Retrieval info failed", error=str(e))
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Error: {str(e)}"
-        )
-
-
-@app.exception_handler(DocumentPortalException)
-async def document_portal_exception_handler(request, exc):
-    return JSONResponse(
-        status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-        content={"detail": str(exc)}
-    )
-
-
-@app.exception_handler(Exception)
-async def general_exception_handler(request, exc):
-    log.error("Unhandled exception", error=str(exc))
-    return JSONResponse(
-        status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-        content={"detail": "Internal server error"}
-    )
