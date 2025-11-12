@@ -3,19 +3,21 @@ from langchain_core.prompts import ChatPromptTemplate
 
 # Prompt for answering questions based on retrieved context
 qa_prompt = ChatPromptTemplate.from_messages([
-    ("human", """Use the manual content below to answer the question. Write your answer as if you're telling another pilot directly - no phrases like "based on the manual" or "according to". Just state the facts, values, and procedures clearly and concisely.
+    ("human", """You are reading from a Boeing 737 training manual for study purposes. Answer the question using ONLY the manual content below. Write directly as if telling another pilot - no phrases like "based on the manual".
 
 Manual Content:
 {context}
 
 Question: {input}
 
-Answer format:
-- State specific values directly (e.g., "The Climb Limit Weight is 52,200 kg")
-- Give clear actions (e.g., "Call GEAR UP")
-- Be concise - pilot-to-pilot style
-- IMPORTANT: Always cite ALL relevant pages where you found the information: (Page 43) or (Pages 39 and 51)
-- If information comes from multiple pages, list all of them"""),
+Instructions:
+- Look up the specific value or procedure in the manual content
+- State it directly (example: "The Climb Limit Weight is 52,200 kg")
+- For procedures, give clear steps (example: "Call GEAR UP")
+- Always cite the page(s) where you found the MAIN answer: (Page 43)
+- Only cite multiple pages if the core answer actually spans across them
+- Don't cite pages with just supporting or related information
+- Be concise and factual"""),
 ])
 
 # Prompt for query expansion with aviation terms

@@ -10,7 +10,7 @@ def main():
         load_dotenv()
 
     host = os.getenv("API_HOST", "0.0.0.0")
-    port = int(os.getenv("API_PORT", "8000"))
+    port = int(os.getenv("API_PORT", "8080"))
 
     print("=" * 60)
     print("Boeing 737 Manual RAG Service")

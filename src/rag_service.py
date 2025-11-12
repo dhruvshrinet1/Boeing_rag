@@ -20,7 +20,7 @@ from src.query_expander import QueryExpander
 class HybridBoeingRAGService:
     """Hybrid RAG with BM25 + Dense retrieval and reranking"""
 
-    def __init__(self, vectorstore: FAISS, top_k: int = 20, rerank_top_k: int = 15):
+    def __init__(self, vectorstore: FAISS, top_k: int = 20, rerank_top_k: int = 10):
         try:
             self.vectorstore = vectorstore
             self.top_k = top_k

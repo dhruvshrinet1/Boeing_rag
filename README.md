@@ -88,7 +88,7 @@ Edit `.env` for:
 - `GOOGLE_API_KEY` - Required
 - `PROCESS_IMAGES` - Enable multimodal image processing (default: false)
 - `TOP_K` - Retrieval count (default: 20)
-- `RERANK_TOP_K` - Final docs after reranking (default: 15)
+- `RERANK_TOP_K` - Final docs after reranking (default: 10)
 
 Edit `config/config.yaml` to change models or parameters.
 
@@ -150,6 +150,9 @@ Balance between context and precision. Smaller chunks = more accurate page citat
 
 **Why page-level metadata?**
 Each chunk stores its source page number. When we retrieve chunks, we extract their pages. This ensures page numbers match the actual PDF.
+
+**Why rerank_top_k=10 instead of 15?**
+Tuned to reduce over-citation of pages. With fewer documents in the final context (10 vs 15), the LLM sees less irrelevant content and cites fewer unnecessary pages. The prompt also explicitly asks to only cite pages with the "main answer", not supporting info. This improves precision without hurting recall.
 
 
 ## Challenges faced
@@ -222,5 +225,5 @@ PDF might be image-based. Try enabling `PROCESS_IMAGES=true` or use OCR preproce
 
 - Index is built once and reused (delete `faiss_index/` to rebuild)
 - Logs go to `logs/` directory
-- Temperature set to 0.4 for consistent answers
+- Temperature set to 0.2 for consistent answers
 - Page numbers are 1-based (matches PDF viewer)

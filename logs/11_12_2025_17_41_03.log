@@ -45,3 +45,48 @@ Use pytorch device: mps
 {"docs": 15, "timestamp": "2025-11-12T17:43:06.082069Z", "level": "info", "event": "Reranking done"}
 {"pages": 1, "timestamp": "2025-11-12T17:43:20.063201Z", "level": "info", "event": "Query done"}
 {"q": "We're planning a Flaps 40 landing on a wet runway at a 1,000-foot pressure altitude airport. If the ", "timestamp": "2025-11-12T17:43:20.581516Z", "level": "info", "event": "Processing query"}
+{"num_expansions": 3, "timestamp": "2025-11-12T17:43:36.767167Z", "level": "info", "event": "Query expanded"}
+{"dense": 20, "bm25": 20, "timestamp": "2025-11-12T17:43:37.151061Z", "level": "info", "event": "Hybrid retrieval done"}
+{"docs": 15, "timestamp": "2025-11-12T17:43:37.843293Z", "level": "info", "event": "Reranking done"}
+{"pages": 2, "timestamp": "2025-11-12T17:43:49.274516Z", "level": "info", "event": "Query done"}
+{"q": "Reviewing the standard takeoff profile: After we're airborne and get a positive rate of climb, what ", "timestamp": "2025-11-12T17:43:49.787291Z", "level": "info", "event": "Processing query"}
+{"num_expansions": 3, "timestamp": "2025-11-12T17:44:06.293610Z", "level": "info", "event": "Query expanded"}
+{"dense": 20, "bm25": 20, "timestamp": "2025-11-12T17:44:06.645630Z", "level": "info", "event": "Hybrid retrieval done"}
+{"docs": 15, "timestamp": "2025-11-12T17:44:07.461029Z", "level": "info", "event": "Reranking done"}
+{"pages": 2, "timestamp": "2025-11-12T17:44:20.889526Z", "level": "info", "event": "Query done"}
+{"q": "Looking at the panel scan responsibilities for when the aircraft is stationary, who is responsible f", "timestamp": "2025-11-12T17:44:21.422068Z", "level": "info", "event": "Processing query"}
+{"num_expansions": 3, "timestamp": "2025-11-12T17:44:32.294797Z", "level": "info", "event": "Query expanded"}
+{"dense": 20, "bm25": 20, "timestamp": "2025-11-12T17:44:32.664969Z", "level": "info", "event": "Hybrid retrieval done"}
+{"docs": 15, "timestamp": "2025-11-12T17:44:33.275752Z", "level": "info", "event": "Reranking done"}
+{"pages": 1, "timestamp": "2025-11-12T17:44:41.968183Z", "level": "info", "event": "Query done"}
+{"q": "I'm calculating our takeoff weight for a dry runway. We're at 2,000 feet pressure altitude, and the ", "timestamp": "2025-11-12T17:44:41.973519Z", "level": "info", "event": "Processing query"}
+{"num_expansions": 3, "timestamp": "2025-11-12T17:44:59.024789Z", "level": "info", "event": "Query expanded"}
+{"dense": 20, "bm25": 20, "timestamp": "2025-11-12T17:44:59.499724Z", "level": "info", "event": "Hybrid retrieval done"}
+{"docs": 15, "timestamp": "2025-11-12T17:45:00.456727Z", "level": "info", "event": "Reranking done"}
+{"pages": 0, "timestamp": "2025-11-12T17:45:20.990201Z", "level": "info", "event": "Query done"}
+{"q": "For a standard visual pattern, what three actions must be completed prior to turning base?", "timestamp": "2025-11-12T17:45:20.999423Z", "level": "info", "event": "Processing query"}
+{"num_expansions": 3, "timestamp": "2025-11-12T17:45:40.235817Z", "level": "info", "event": "Query expanded"}
+{"dense": 20, "bm25": 20, "timestamp": "2025-11-12T17:45:40.561524Z", "level": "info", "event": "Hybrid retrieval done"}
+{"docs": 15, "timestamp": "2025-11-12T17:45:41.230207Z", "level": "info", "event": "Reranking done"}
+{"pages": 1, "timestamp": "2025-11-12T17:45:57.546881Z", "level": "info", "event": "Query done"}
+{"q": "If the PF is making entries into the CDU during flight, what must the PF do prior to execution?", "timestamp": "2025-11-12T17:45:57.554507Z", "level": "info", "event": "Processing query"}
+{"num_expansions": 3, "timestamp": "2025-11-12T17:46:16.595288Z", "level": "info", "event": "Query expanded"}
+{"dense": 20, "bm25": 20, "timestamp": "2025-11-12T17:46:16.900956Z", "level": "info", "event": "Hybrid retrieval done"}
+{"docs": 15, "timestamp": "2025-11-12T17:46:18.467190Z", "level": "info", "event": "Reranking done"}
+{"pages": 1, "timestamp": "2025-11-12T17:46:38.748467Z", "level": "info", "event": "Query done"}
+{"q": "I see an amber \"STAIRS OPER\" light illuminated on the forward attendant panel; what does that light ", "timestamp": "2025-11-12T17:46:39.303628Z", "level": "info", "event": "Processing query"}
+{"num_expansions": 3, "timestamp": "2025-11-12T17:46:56.969501Z", "level": "info", "event": "Query expanded"}
+{"dense": 20, "bm25": 20, "timestamp": "2025-11-12T17:46:57.357841Z", "level": "info", "event": "Hybrid retrieval done"}
+{"docs": 15, "timestamp": "2025-11-12T17:46:57.998587Z", "level": "info", "event": "Reranking done"}
+{"pages": 1, "timestamp": "2025-11-12T17:47:05.867912Z", "level": "info", "event": "Query done"}
+{"q": "We've just completed the engine start. What is the correct configuration for the ISOLATION VALVE swi", "timestamp": "2025-11-12T17:47:06.412327Z", "level": "info", "event": "Processing query"}
+{"num_expansions": 3, "timestamp": "2025-11-12T17:47:17.599143Z", "level": "info", "event": "Query expanded"}
+{"dense": 20, "bm25": 20, "timestamp": "2025-11-12T17:47:17.925096Z", "level": "info", "event": "Hybrid retrieval done"}
+{"docs": 15, "timestamp": "2025-11-12T17:47:18.889110Z", "level": "info", "event": "Reranking done"}
+{"pages": 1, "timestamp": "2025-11-12T17:47:32.358585Z", "level": "info", "event": "Query done"}
+{"q": "During the Descent and Approach procedure, what action is taken with the AUTO BRAKE select switch , ", "timestamp": "2025-11-12T17:47:32.905536Z", "level": "info", "event": "Processing query"}
+{"num_expansions": 3, "timestamp": "2025-11-12T17:47:48.631636Z", "level": "info", "event": "Query expanded"}
+{"dense": 20, "bm25": 20, "timestamp": "2025-11-12T17:47:49.037590Z", "level": "info", "event": "Hybrid retrieval done"}
+{"docs": 15, "timestamp": "2025-11-12T17:47:49.697409Z", "level": "info", "event": "Reranking done"}
+{"pages": 2, "timestamp": "2025-11-12T17:48:04.318327Z", "level": "info", "event": "Query done"}
+{"q": "I'm calculating our takeoff weight for a dry runway. We're at 2,000 feet pressure altitude, and the ", "timestamp": "2025-11-12T17:52:16.824551Z", "level": "info", "event": "Processing query"}
