@@ -2,15 +2,8 @@ from pydantic import BaseModel, RootModel, Field
 from typing import List, Union, Optional
 from enum import Enum
 
-class Metadata(BaseModel):
-    summary: List[str]
-    page: int
 
-class PromptType(Enum):
-    """Enum for different prompt types"""
-    DOCUMENT_ANALYSIS = "document_analysis"
-    CONTEXTUALIZE_QUESTION = "contextualize_question"
-    CONTEXT_QA = "context_qa"
+
 
 class QuestionRequest(BaseModel):
     """Request model for RAG API"""

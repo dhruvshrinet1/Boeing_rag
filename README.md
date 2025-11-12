@@ -26,7 +26,6 @@ The solution consists of three main components:
 - Configurable chunk size and overlap for optimal retrieval
 
 ### 2. RAG Service (`src/rag_service.py`)
-- **BoeingRAGService**: Standard RAG with dense vector retrieval
 - **HybridBoeingRAGService**: Enhanced RAG with BM25 + Dense + Re-ranking
 - Extracts unique page numbers from retrieved documents
 - Provides detailed retrieval information for evaluation
@@ -35,7 +34,6 @@ The solution consists of three main components:
 - FastAPI application with `/query` endpoint
 - Returns JSON: `{"answer": "...", "pages": [1, 5, 12]}`
 - Health check and retrieval info endpoints
-- Proper error handling and CORS support
 
 ## Installation
 
